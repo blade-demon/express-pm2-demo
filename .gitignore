@@ -1,4 +1,5 @@
 node_modules
+npm-debug.*
 .c9
 .idea
 .vscode
