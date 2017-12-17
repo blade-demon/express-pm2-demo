@@ -1,9 +1,0 @@
--#!/bin/sh
-ssh ubuntu@ec2-13-125-39-220.ap-northeast-2.compute.amazonaws.com <<EOF
-  cd /home/ubuntu/express-pm2-demo
-  git pull origin master
-  node -v
-  npm install --production
-  pm2 restart all
-  exit
-EOF
