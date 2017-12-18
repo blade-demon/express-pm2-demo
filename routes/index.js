@@ -1,8 +1,26 @@
-var express = require('express');
-var router = express.Router();
+import express from 'express';
+let router = express.Router();
 
-router.get('/', function(req, res, next) {
-    res.send('Server is running!');
+
+/**
+ * 演示操作
+ * @param {string} time
+ */
+var sleep = function(time) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve();
+        }, time);
+    });
+}
+
+router.get('/', async(req, res) => {
+    console.log('start');
+    await sleep(2000);
+    console.log('end');
+    res.send('Server is up');
 });
 
-module.exports = router;
+
+
+export default router;
